@@ -1,0 +1,13 @@
+# Cached data pulls and generated outputs (regenerate by running the pipeline)
+salah_replacement_data/
+*.csv.bak
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS
+.DS_Store

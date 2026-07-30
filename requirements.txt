@@ -1,0 +1,11 @@
+understatapi
+pandas
+numpy
+scikit-learn
+matplotlib
+plotly
+beautifulsoup4
+requests
+lxml
+html5lib
+jupyter
