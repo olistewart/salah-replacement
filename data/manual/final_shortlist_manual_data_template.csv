@@ -1,8 +1,0 @@
-player_name,current_club,league,take_ons_per90,take_on_success_rate,crosses_per90,box_crosses_per90,age,market_value_eur_m,contract_expires,data_source_notes
-Bradley Barcola,Paris Saint-Germain,Ligue 1,,,,,,,,"FBref: fbref.com/en/players/a0d55a09/Bradley-Barcola -> Possession tab (Take-Ons) + Passing Types tab (Crs). TM: transfermarkt.com search 'Bradley Barcola'."
-Ibrahim Mbaye,Paris Saint-Germain,Ligue 1,,,,,,,,"FBref: fbref.com search 'Ibrahim Mbaye' -> Possession + Passing Types tabs. TM: transfermarkt.com/ibrahim-mbaye/profil/spieler/1185888"
-Brahim Diaz,Real Madrid,La Liga,,,,,,,,"FBref: fbref.com search 'Brahim Diaz' -> Possession + Passing Types tabs. TM: transfermarkt.com/brahim-diaz/profil/spieler/314678"
-Karim Adeyemi,Borussia Dortmund,Bundesliga,,,,,,,,"FBref: fbref.com/en/players/501055d8/Karim-Adeyemi -> Possession + Passing Types tabs. TM: transfermarkt.com search 'Karim Adeyemi'."
-Luca Koleosho,Espanyol (loan from Burnley),La Liga,,,,,,,,"Small sample -- only 543 mins / 16 apps in 2025-26 per ESPN/RotoWire. FBref: fbref.com/en/players/fc076f78/Luca-Koleosho. Cross-check injury history before trusting any rate stat here (recurring lower-body issues, see prior discussion)."
-Yan Diomande,RB Leipzig,Bundesliga,4.34,0.60,,,,,,"Take-ons/success rate from tacticalfootballanalysis.com scout report (119/197 attempts, 60%). Crosses/box-crosses still needed -- FBref Passing Types tab."
-Francisco Conceicao,Juventus,Serie A,1.8,0.56,,,,,,"From theanalyst.com (Opta) -- up from 1.3/90 last season. Crosses/box-crosses still needed -- FBref Passing Types tab. Note: 5-year Juventus contract signed 2025, complicates realism of a move."
