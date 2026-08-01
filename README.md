@@ -1,11 +1,11 @@
-# Mohamed Salah Replacement -- Recruitment Analysis
+# Mohamed Salah Replacement - Recruitment Analysis
 
 A data-driven shortlist of stylistically similar, realistic replacements for
 Mohamed Salah, built from Understat per-90 data across the Big-5 European
 leagues, unsupervised k-means clustering, and cosine similarity to a
 career-weighted Salah target profile.
 
-## What this is
+## Project Overview
 
 Liverpool are facing one of their biggest recruitment decisions yet: need to replace Salah. Rather than starting from
 reputation or a scout's shortlist, this project starts from data: every
