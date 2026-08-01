@@ -7,15 +7,15 @@ career-weighted Salah target profile.
 
 ## What this is
 
-Liverpool eventually need to replace Salah. Rather than starting from
+Liverpool are facing one of their biggest recruitment decisions yet: need to replace Salah. Rather than starting from
 reputation or a scout's shortlist, this project starts from data: every
 attacking player in the Big-5 leagues (Premier League, La Liga, Bundesliga,
 Serie A, Ligue 1) over the last two completed seasons, profiled on nine
 per-90 attacking metrics, clustered, and ranked by similarity to Salah's own
-statistical profile. A handful of supplementary analyses -- league
+statistical profile. A handful of supplementary analyses - league
 translation (how do stats change when a player switches leagues?) and
 breakout trajectory matching (who's on the same growth curve Salah was on
-before his own move to Liverpool?) -- add context beyond a single snapshot
+before his own move to Liverpool?) - add context beyond a single snapshot
 similarity score.
 
 **The final shortlist that came out of this analysis:** Bradley Barcola,
