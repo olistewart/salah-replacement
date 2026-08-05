@@ -3,7 +3,12 @@
 `final_shortlist_vs_salah_profiles.csv` - the 8-player final comparison set
 (plus Salah's own target row) from the real, executed notebook run: per-90
 profile, cluster assignment (all 8 fall in cluster 2, same as Salah's target),
-and cosine similarity to Salah.
+and cosine similarity to Salah. 
+
+`salah_replacement_ranked.csv` - every player in the dataset ranked by cosine 
+similarity against Salah's target profile. Only players in cluster 2 were considered, 
+and the final target shortlist (Barcola and Mbaye) took into account Transfermarkt 
+data and actual likelihood of Liverpool making the signing.
 
 This file is reconstructed from the notebook's own saved print/display output
 (`notebooks/salah_replacement.ipynb`, cells building `ranked`,
