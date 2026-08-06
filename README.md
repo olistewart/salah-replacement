@@ -7,7 +7,7 @@ career-weighted Salah target profile.
 
 ## Project Overview
 
-Liverpool are facing one of their biggest recruitment decisions ever: they need to replace Salah. 
+Liverpool are facing one of their biggest recruitment decisions for years: they need to replace Salah. 
 Rather than starting from reputation or a scout's shortlist, this project starts from data: every
 attacking player in the Big-5 leagues (Premier League, La Liga, Bundesliga,
 Serie A, Ligue 1) over the last two completed seasons, profiled on nine
