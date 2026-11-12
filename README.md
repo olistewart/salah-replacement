@@ -150,7 +150,7 @@ Barcola in particular.
   a large sample, and both models are explicit about confidence/reliability
   tiers rather than presenting every estimate as equally trustworthy.
 
-## Running it
+## Running
 
 ```bash
 pip install -r requirements.txt
@@ -175,13 +175,11 @@ Understat API and `12_transfermarkt.py` hits Transfermarkt (which, per the
 caveat above, doesn't return usable data) - both are slow/network-dependent;
 everything from `03` onward is pure computation over the cached CSVs.
 
-## Extensions
+## Data
 
-Two follow-up scripts - a Power BI CSV/dashboard export, and a compact
-dashboard for a final, narrowed 3-name shortlist - live in `extensions/`.
-They were built after the core analysis and tested against synthetic data
-rather than the real candidate pool; see `extensions/README.md` before
-trusting their output.
+Player-season statistics for the Big-5 leagues (Premier League, La Liga, Bundesliga, Serie A, Ligue 1) were collected from [Understat](https://understat.com) using the `understatapi` Python client. The main window covers the 2021/22 to 2025/26 seasons, plus earlier seasons for Mohamed Salah (Serie A 2015-16 and Premier League 2017-18 to 2020-21), which are needed for the career-trajectory comparison. Pulls are cached locally to CSV so re-runs don't re-query the source.
+
+The raw data is not included in this repository; it belongs to Understat and remains subject to their terms of use. To reproduce, run the data collection section of the notebook, which regenerates the cache.
 
 ## License
 
