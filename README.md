@@ -52,43 +52,57 @@ requirements.txt
 LICENSE
 ```
 
+## Features
+
+Nine per-90 features from Understat describe each player's attacking profile:
+
+| Feature | Definition |
+|---|---|
+| Non-pen goals /90 | Goals scored excluding penalties |
+| Non-pen xG /90 | Expected goals from non-penalty shots: the summed probability of those shots being scored, based on shot location and type |
+| Shots /90 | Shots taken |
+| Assists /90 | Passes that directly led to a goal |
+| xA /90 | Expected assists: the xG of shots created by the player's passes |
+| Key passes /90 | Passes that directly led to a shot |
+| xG Chain /90 | Total xG of every possession sequence the player was involved in, whether or not they took the shot |
+| xG Buildup /90 | Total xG of the sequences the player was involved in, excluding their own shots and key passes; it captures involvement earlier in the move |
+| xG per shot | Average quality of each shot taken (non-pen xG divided by shots) |
+
 ## Methodology
 
 1. **Setup & data collection** (`src/01`, `src/02`). Pulls per-90 player-season
    data via the `understatapi` Python client: five main seasons (2021-2026)
    across the top five leagues, plus extra historical seasons for Salah
    specifically (Premier League 2017-2020).
-2. **Feature engineering** (`src/03`). Nine per-90 features: non-penalty
-   goals, non-penalty xG, shots, assists, xA, key passes, xGChain, xGBuildup,
-   and xG per shot. A `reliability` flag (High/Medium/Low by minutes played)
+2. **Feature engineering** (`src/03`). Nine per-90 features (see above). A `reliability` flag (High/Medium/Low by minutes played)
    is attached to every player instead of hard-filtering low-minute players
    out.
-3. **Salah target profile** (`src/04`). Salah's own per-90 output at
+4. **Salah target profile** (`src/04`). Salah's own per-90 output at
    Liverpool, 2017-2025, each season weighted equally (the
    2025-26 season is excluded).
-4. **Candidate pool** (`src/05`). Every attacking player across the Big-5
+5. **Candidate pool** (`src/05`). Every attacking player across the Big-5
    leagues in the last two completed seasons (2024-2026).
-5. **Clustering** (`src/06`). K-means (K=5, chosen from the elbow plot) over
+6. **Clustering** (`src/06`). K-means (K=5, chosen from the elbow plot) over
    the standardized candidate profiles.
-6. **Similarity ranking** (`src/07`). Cosine similarity between each
+7. **Similarity ranking** (`src/07`). Cosine similarity between each
    candidate and Salah's target vector, in the same standardized feature
    space as the clustering.
-7. **Visuals** (`src/08`-`src/11`). PCA scatter, radar
+8. **Visuals** (`src/08`-`src/11`). PCA scatter, radar
    plots (combined and per-candidate vs. Salah), stat-vs-stat scatters
    (goal threat vs. creativity, shot volume vs. quality), a minutes-vs-
    similarity check, and per-feature distribution histograms.
-8. **Transfermarkt analysis** (`src/12`). Scrapes public Transfermarkt pages
+9. **Transfermarkt analysis** (`src/12`). Scrapes public Transfermarkt pages
    for market value history and age. **This did not return usable data in
    the actual run** but can be obtained manually - see Caveats.
-9. **League translation model**, v1 and v2 (`src/13`, `src/14`). Projects a
+10. **League translation model**, v1 and v2 (`src/13`, `src/14`). Projects a
    candidate's stats into a different league using empirically observed
    cross-league transfers (v2 adds minutes-weighting, cluster-aware ratios,
    and a proper z-scored fallback for league pairs with too little data).
-10. **Breakout trajectory matching** (`src/15`, `src/16`). A complementary
+11. **Breakout trajectory matching** (`src/15`, `src/16`). A complementary
     signal to the static similarity score: does a candidate's own
     season-over-season growth shape resemble Salah's Roma-to-Liverpool
     breakout arc?
-11. **Dashboard** (`src/17`). Packages the leaderboard, top-3 radar, and
+12. **Dashboard** (`src/17`). Packages the leaderboard, top-3 radar, and
     league translation table into one self-contained HTML file.
 
 ## Results
