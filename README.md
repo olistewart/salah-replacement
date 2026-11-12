@@ -7,18 +7,14 @@ career-weighted Salah target profile.
 
 ## Project Overview
 
-Liverpool are facing one of their biggest recruitment decisions for years: they need to replace Salah. 
-Rather than starting from reputation or a scout's shortlist, this project starts from data: every
+Liverpool are facing one of their biggest recruitment decisions for years: replacing Mohamed Salah. 
+This project starts from data: every
 attacking player in the Big-5 leagues (Premier League, La Liga, Bundesliga,
 Serie A, Ligue 1) over the last two completed seasons, profiled on nine
 per-90 attacking metrics, clustered, and ranked by similarity to Salah's own
-statistical profile based on his Liverpool career. A handful of supplementary analyses - league
-translation (how do stats change when a player switches leagues?) and
-breakout trajectory matching (who's on the same growth curve Salah was on
-before his own move to Liverpool?) - add context beyond a single snapshot
-similarity score.
+statistical profile based on his Liverpool career.
 
-**The final shortlist that came out of this analysis:** Bradley Barcola,
+**The final shortlist:** Bradley Barcola,
 Ibrahim Mbaye, and Yan Diomande. Luca Koleosho emerged as one to watch, but
 has played insufficient minutes for his profile to be robust. see [Results](#results) below.
 
@@ -59,21 +55,19 @@ LICENSE
 ## Methodology
 
 1. **Setup & data collection** (`src/01`, `src/02`). Pulls per-90 player-season
-   data via the `understatapi` Python client: five main seasons (2021-2025)
-   across all five leagues, plus extra historical seasons for Salah
-   specifically (Premier League 2017-2020, Serie A 2015-2016 -- his Roma
-   seasons, needed later for breakout trajectory matching).
+   data via the `understatapi` Python client: five main seasons (2021-2026)
+   across the top five leagues, plus extra historical seasons for Salah
+   specifically (Premier League 2017-2020).
 2. **Feature engineering** (`src/03`). Nine per-90 features: non-penalty
    goals, non-penalty xG, shots, assists, xA, key passes, xGChain, xGBuildup,
    and xG per shot. A `reliability` flag (High/Medium/Low by minutes played)
    is attached to every player instead of hard-filtering low-minute players
-   out -- an earlier version of this project used a minutes cutoff and it
-   was silently excluding plausible candidates (e.g. Brahim Diaz).
+   out.
 3. **Salah target profile** (`src/04`). Salah's own per-90 output at
-   Liverpool, 2017-2025, each season weighted equally (the in-progress
+   Liverpool, 2017-2025, each season weighted equally (the
    2025-26 season is excluded).
 4. **Candidate pool** (`src/05`). Every attacking player across the Big-5
-   leagues in the last two completed seasons.
+   leagues in the last two completed seasons (2024-2026).
 5. **Clustering** (`src/06`). K-means (K=5, chosen from the elbow plot) over
    the standardized candidate profiles.
 6. **Similarity ranking** (`src/07`). Cosine similarity between each
